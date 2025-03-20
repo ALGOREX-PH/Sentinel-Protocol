@@ -15,9 +15,9 @@ export default function Hero() {
   return (
     <div className="relative overflow-hidden pt-8">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
           <div>
-            <h1 className="text-4xl sm:text-5xl font-bold mb-6">
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6">
               <span className="text-sentinel-white">Protecting Your Crypto:</span>
               <div className="mt-2">
                 <span className="text-blue-500">AI-Powered Scam Detection</span>
@@ -32,7 +32,6 @@ export default function Hero() {
               <button className="bg-blue-500 hover:bg-blue-600 text-white px-6 py-3 rounded-lg font-medium flex items-center justify-center gap-2 transition-colors">
                 Submit a Project <ArrowRight className="h-5 w-5" />
               </button>
-              <button className="bg-white/10 hover:bg-white/20 text-white px-6 py-3 rounded-lg font-medium flex items-center justify-center gap-2 transition-colors">
                 Explore Scam Reports <AlertTriangle className="h-5 w-5" />
               </button>
               <button className="border-2 border-blue-500 text-blue-500 hover:bg-blue-500 hover:text-white px-6 py-3 rounded-lg font-medium flex items-center justify-center gap-2 transition-colors">
