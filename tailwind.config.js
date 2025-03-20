@@ -24,10 +24,31 @@ export default {
           }
         }
       },
+      typography: {
+        DEFAULT: {
+          css: {
+            color: '#F5F5F5',
+            a: {
+              color: '#00A6A6',
+              '&:hover': {
+                color: '#008B8B',
+              },
+            },
+            strong: {
+              color: '#F5F5F5',
+            },
+            code: {
+              color: '#F5F5F5',
+            },
+          },
+        },
+      },
       animation: {
         'pulse': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
       }
     },
   },
-  plugins: [],
+  plugins: [
+    require('@tailwindcss/typography'),
+  ],
 };
