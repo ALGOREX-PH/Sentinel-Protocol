@@ -35,7 +35,7 @@ export default function Hero() {
               <button className="bg-white/10 hover:bg-white/20 text-white px-6 py-3 rounded-lg font-medium flex items-center justify-center gap-2 transition-colors">
                 Explore Scam Reports <AlertTriangle className="h-5 w-5" />
               </button>
-              <button className="text-blue-500 hover:text-blue-400 px-6 py-3 rounded-lg font-medium flex items-center justify-center gap-2 transition-colors">
+              <button className="border-2 border-blue-500 text-blue-500 hover:bg-blue-500 hover:text-white px-6 py-3 rounded-lg font-medium flex items-center justify-center gap-2 transition-colors">
                 Join the Community
               </button>
             </div>
@@ -47,6 +47,7 @@ export default function Hero() {
                 alt="Blockchain Network"
                 className="w-full h-full object-cover"
               />
+              <div className="absolute inset-0 bg-gradient-to-tr from-blue-900/10 via-transparent to-purple-900/10" />
             </div>
           </div>
         </div>
