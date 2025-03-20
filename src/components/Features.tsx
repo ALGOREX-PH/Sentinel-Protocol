@@ -28,17 +28,17 @@ export default function Features() {
   return (
     <div className="py-24 bg-gray-900/50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
+        <div className="text-center mb-8 sm:mb-16">
           <h2 className="text-3xl font-bold mb-4">Core Features</h2>
           <p className="text-sentinel-white/60 max-w-2xl mx-auto">
             Protecting investors through advanced technology and community collaboration
           </p>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-8">
           {features.map((feature) => (
             <div
               key={feature.title}
-              className="p-6 rounded-xl bg-sentinel-dark-800/50 hover:bg-sentinel-dark-700/50 transition-colors"
+              className="p-4 sm:p-6 rounded-xl bg-sentinel-dark-800/50 hover:bg-sentinel-dark-700/50 transition-colors"
             >
               <feature.icon className="h-12 w-12 text-sentinel-cyan mb-4" />
               <h3 className="text-xl font-semibold mb-2">{feature.title}</h3>
