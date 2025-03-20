@@ -8,7 +8,7 @@ interface ProgressStepsProps {
 
 export default function ProgressSteps({ steps, currentStep }: ProgressStepsProps) {
   return (
-    <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 -mt-0">
+    <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 mt-8">
       <div className="bg-sentinel-dark-800/50 rounded-xl p-4 border border-sentinel-dark-700">
         <div className="flex justify-between">
           {steps.map((step, index) => (
