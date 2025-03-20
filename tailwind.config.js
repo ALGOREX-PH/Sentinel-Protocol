@@ -23,6 +23,9 @@ export default {
             '700': '#142F66',    // Lighter variation
           }
         }
+      },
+      animation: {
+        'pulse': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
       }
     },
   },
