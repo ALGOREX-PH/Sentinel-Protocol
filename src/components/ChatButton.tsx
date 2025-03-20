@@ -54,8 +54,8 @@ export default function ChatButton() {
                   <div
                     className={`max-w-[80%] rounded-2xl p-3 ${
                       message.role === 'user'
-                        ? 'bg-sentinel-cyan text-white px-4 py-3'
-                        : 'bg-sentinel-dark-700 text-sentinel-white px-4 py-3'
+                        ? 'bg-sentinel-cyan text-white px-4 py-3 text-center'
+                        : 'bg-sentinel-dark-700 text-sentinel-white px-4 py-3 text-center'
                     }`}
                   >
                     {message.content}
