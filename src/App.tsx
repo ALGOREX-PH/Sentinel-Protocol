@@ -5,6 +5,8 @@ import Features from './components/Features';
 import TrustScore from './components/TrustScore';
 import CommunitySection from './components/CommunitySection';
 import AISection from './components/AISection';
+import ScamAlerts from './components/ScamAlerts';
+import Footer from './components/Footer.tsx';
 
 function App() {
   return (
@@ -14,6 +16,8 @@ function App() {
       <TrustScore />
       <CommunitySection />
       <AISection />
+      <ScamAlerts />
+      <Footer />
     </div>
   );
 }
