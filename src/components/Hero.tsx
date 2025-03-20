@@ -1,4 +1,5 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Shield, ArrowRight, AlertTriangle, Globe } from 'lucide-react';
 
 const LiveStats = () => (
@@ -12,6 +13,8 @@ const LiveStats = () => (
 );
 
 export default function Hero() {
+  const navigate = useNavigate();
+
   return (
     <div className="relative overflow-hidden pt-8">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
@@ -29,7 +32,10 @@ export default function Hero() {
               Secure your investments with real-time threat detection and community-verified insights.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
-              <button className="bg-blue-500 hover:bg-blue-600 text-white px-6 py-3 rounded-lg font-medium flex items-center justify-center gap-2 transition-colors">
+              <button
+                onClick={() => navigate('/submit')}
+                className="bg-blue-500 hover:bg-blue-600 text-white px-6 py-3 rounded-lg font-medium flex items-center justify-center gap-2 transition-colors"
+              >
                 Submit a Project <ArrowRight className="h-5 w-5" />
               </button>
               <button className="bg-white/10 hover:bg-white/20 text-white px-6 py-3 rounded-lg font-medium flex items-center justify-center gap-2 transition-colors">
