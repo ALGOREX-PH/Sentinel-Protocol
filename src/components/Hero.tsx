@@ -32,6 +32,7 @@ export default function Hero() {
               <button className="bg-blue-500 hover:bg-blue-600 text-white px-6 py-3 rounded-lg font-medium flex items-center justify-center gap-2 transition-colors">
                 Submit a Project <ArrowRight className="h-5 w-5" />
               </button>
+              <button className="bg-white/10 hover:bg-white/20 text-white px-6 py-3 rounded-lg font-medium flex items-center justify-center gap-2 transition-colors">
                 Explore Scam Reports <AlertTriangle className="h-5 w-5" />
               </button>
               <button className="border-2 border-blue-500 text-blue-500 hover:bg-blue-500 hover:text-white px-6 py-3 rounded-lg font-medium flex items-center justify-center gap-2 transition-colors">
