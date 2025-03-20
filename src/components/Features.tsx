@@ -30,7 +30,7 @@ export default function Features() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-3xl font-bold mb-4">Core Features</h2>
-          <p className="text-gray-400 max-w-2xl mx-auto">
+          <p className="text-sentinel-white/60 max-w-2xl mx-auto">
             Protecting investors through advanced technology and community collaboration
           </p>
         </div>
@@ -38,11 +38,11 @@ export default function Features() {
           {features.map((feature) => (
             <div
               key={feature.title}
-              className="p-6 rounded-xl bg-gray-800/50 hover:bg-gray-800/70 transition-colors"
+              className="p-6 rounded-xl bg-sentinel-dark-800/50 hover:bg-sentinel-dark-700/50 transition-colors"
             >
-              <feature.icon className="h-12 w-12 text-indigo-500 mb-4" />
+              <feature.icon className="h-12 w-12 text-sentinel-cyan mb-4" />
               <h3 className="text-xl font-semibold mb-2">{feature.title}</h3>
-              <p className="text-gray-400">{feature.description}</p>
+              <p className="text-sentinel-white/60">{feature.description}</p>
             </div>
           ))}
         </div>
