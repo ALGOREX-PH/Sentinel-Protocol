@@ -39,8 +39,8 @@ export default function ChatButton() {
       </button>
 
       {isOpen && (
-        <div className="fixed bottom-24 right-6 w-96 h-[600px] bg-white rounded-2xl shadow-xl flex flex-col">
-          <div className="p-4 bg-blue-500 rounded-t-2xl">
+        <div className="fixed bottom-24 right-6 w-96 h-[600px] bg-sentinel-dark-800 rounded-2xl shadow-xl flex flex-col border border-sentinel-dark-700">
+          <div className="p-4 bg-sentinel-dark-900 rounded-t-2xl border-b border-sentinel-dark-700">
             <h3 className="text-white font-semibold">AI Assistant</h3>
           </div>
 
@@ -53,8 +53,8 @@ export default function ChatButton() {
                 <div
                   className={`max-w-[80%] rounded-2xl p-3 ${
                     message.role === 'user'
-                      ? 'bg-blue-500 text-white'
-                      : 'bg-gray-100 text-gray-800'
+                      ? 'bg-sentinel-cyan text-white'
+                      : 'bg-sentinel-dark-700 text-sentinel-white'
                   }`}
                 >
                   {message.content}
@@ -64,20 +64,20 @@ export default function ChatButton() {
             <div ref={messagesEndRef} />
           </div>
 
-          <form onSubmit={handleSubmit} className="p-4 border-t">
+          <form onSubmit={handleSubmit} className="p-4 border-t border-sentinel-dark-700">
             <div className="flex gap-2">
               <input
                 type="text"
                 value={input}
                 onChange={(e) => setInput(e.target.value)}
                 placeholder="Type your message..."
-                className="flex-1 px-4 py-2 rounded-lg border focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="flex-1 px-4 py-2 rounded-lg bg-sentinel-dark-700 border-none text-sentinel-white placeholder-sentinel-white/40 focus:outline-none focus:ring-2 focus:ring-sentinel-cyan"
                 disabled={isLoading}
               />
               <button
                 type="submit"
                 disabled={isLoading}
-                className="p-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 disabled:opacity-50"
+                className="p-2 bg-sentinel-cyan text-white rounded-lg hover:bg-sentinel-teal disabled:opacity-50 transition-colors"
               >
                 {isLoading ? (
                   <Loader2 className="h-5 w-5 animate-spin" />
@@ -86,9 +86,9 @@ export default function ChatButton() {
                 )}
               </button>
               {audioPlaying ? (
-                <Volume2 className="h-5 w-5 text-blue-500" />
+                <Volume2 className="h-5 w-5 text-sentinel-cyan" />
               ) : (
-                <VolumeX className="h-5 w-5 text-gray-400" />
+                <VolumeX className="h-5 w-5 text-sentinel-white/40" />
               )}
             </div>
           </form>
