@@ -4,6 +4,9 @@ import Header from './submit/Header';
 import ProgressSteps from './submit/ProgressSteps';
 import Navigation from './submit/Navigation';
 import BasicInfo from './submit/steps/BasicInfo';
+import TechnicalInfo from './submit/steps/TechnicalInfo';
+import TeamSocial from './submit/steps/TeamSocial';
+import Verification from './submit/steps/Verification';
 import AIFeatures from './submit/AIFeatures';
 
 const steps: FormStep[] = [
@@ -37,7 +40,9 @@ export default function SubmitProject() {
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <div className="bg-sentinel-dark-800/50 rounded-xl p-6 sm:p-8 border border-sentinel-dark-700">
           {currentStep === 0 && <BasicInfo />}
-          {/* Add other step components here */}
+          {currentStep === 1 && <TechnicalInfo />}
+          {currentStep === 2 && <TeamSocial />}
+          {currentStep === 3 && <Verification />}
 
           <Navigation
             currentStep={currentStep}
