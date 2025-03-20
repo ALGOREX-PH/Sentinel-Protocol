@@ -8,7 +8,7 @@ import AISection from './components/AISection';
 
 function App() {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-900 to-gray-800 text-white">
+    <div className="min-h-screen bg-gradient-to-b from-sentinel-dark-900 to-sentinel-dark-800 text-sentinel-white">
       <Hero />
       <Features />
       <TrustScore />
