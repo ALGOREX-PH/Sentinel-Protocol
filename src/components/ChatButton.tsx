@@ -1,5 +1,6 @@
 import React from 'react';
 import { MessageCircle, X, Send, Loader2, Volume1 } from 'lucide-react';
+import ReactMarkdown from 'react-markdown';
 import useChatStore from '../store/chatStore';
 
 export default function ChatButton() {
@@ -54,11 +55,26 @@ export default function ChatButton() {
                   <div
                     className={`max-w-[80%] rounded-2xl p-3 ${
                       message.role === 'user'
-                        ? 'bg-sentinel-cyan text-white px-4 py-3 text-center'
-                        : 'bg-sentinel-dark-700 text-sentinel-white px-4 py-3 text-center'
+                        ? 'bg-sentinel-cyan text-white px-4 py-3'
+                        : 'bg-sentinel-dark-700 text-sentinel-white px-4 py-3'
                     }`}
                   >
-                    {message.content}
+                    <ReactMarkdown
+                      className="prose prose-invert max-w-none"
+                      components={{
+                        p: ({ children }) => <p className="m-0">{children}</p>,
+                        ul: ({ children }) => <ul className="list-disc pl-4 my-2">{children}</ul>,
+                        ol: ({ children }) => <ol className="list-decimal pl-4 my-2">{children}</ol>,
+                        li: ({ children }) => <li className="my-1">{children}</li>,
+                        code: ({ children }) => (
+                          <code className="bg-sentinel-dark-900/50 rounded px-1 py-0.5 text-sm">
+                            {children}
+                          </code>
+                        ),
+                      }}
+                    >
+                      {message.content}
+                    </ReactMarkdown>
                   </div>
                   {message.role === 'assistant' && (
                     <button
