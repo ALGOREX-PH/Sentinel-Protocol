@@ -1,9 +1,9 @@
 import React from 'react';
-import { MessageCircle, X, Send, Loader2, Volume2, VolumeX } from 'lucide-react';
+import { MessageCircle, X, Send, Loader2, Volume1 } from 'lucide-react';
 import useChatStore from '../store/chatStore';
 
 export default function ChatButton() {
-  const { isOpen, isLoading, audioPlaying, messages, toggleChat, sendMessage } = useChatStore();
+  const { isOpen, isLoading, audioPlaying, messages, toggleChat, sendMessage, playAudio } = useChatStore();
   const [input, setInput] = React.useState('');
   const messagesEndRef = React.useRef<HTMLDivElement>(null);
 
@@ -50,14 +50,25 @@ export default function ChatButton() {
                 key={index}
                 className={`flex ${message.role === 'user' ? 'justify-end' : 'justify-start'}`}
               >
-                <div
-                  className={`max-w-[80%] rounded-2xl p-3 ${
-                    message.role === 'user'
-                      ? 'bg-sentinel-cyan text-white'
-                      : 'bg-sentinel-dark-700 text-sentinel-white'
-                  }`}
-                >
-                  {message.content}
+                <div className="flex items-start gap-2">
+                  <div
+                    className={`max-w-[80%] rounded-2xl p-3 ${
+                      message.role === 'user'
+                        ? 'bg-sentinel-cyan text-white px-4 py-3'
+                        : 'bg-sentinel-dark-700 text-sentinel-white px-4 py-3'
+                    }`}
+                  >
+                    {message.content}
+                  </div>
+                  {message.role === 'assistant' && (
+                    <button
+                      onClick={() => playAudio(message.content)}
+                      className="p-1 hover:bg-sentinel-dark-700 rounded-full transition-colors"
+                      disabled={audioPlaying}
+                    >
+                      <Volume1 className="h-4 w-4 text-sentinel-cyan hover:text-sentinel-teal transition-colors" />
+                    </button>
+                  )}
                 </div>
               </div>
             ))}
@@ -71,7 +82,7 @@ export default function ChatButton() {
                 value={input}
                 onChange={(e) => setInput(e.target.value)}
                 placeholder="Type your message..."
-                className="flex-1 px-4 py-2 rounded-lg bg-sentinel-dark-700 border-none text-sentinel-white placeholder-sentinel-white/40 focus:outline-none focus:ring-2 focus:ring-sentinel-cyan"
+                className="flex-1 px-5 py-3 rounded-lg bg-sentinel-dark-700 border-none text-sentinel-white placeholder-sentinel-white/40 focus:outline-none focus:ring-2 focus:ring-sentinel-cyan"
                 disabled={isLoading}
               />
               <button
@@ -84,12 +95,7 @@ export default function ChatButton() {
                 ) : (
                   <Send className="h-5 w-5" />
                 )}
-              </button>
-              {audioPlaying ? (
-                <Volume2 className="h-5 w-5 text-sentinel-cyan" />
-              ) : (
-                <VolumeX className="h-5 w-5 text-sentinel-white/40" />
-              )}
+              </button>              
             </div>
           </form>
         </div>
