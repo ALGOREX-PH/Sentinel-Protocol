@@ -1,5 +1,5 @@
 import React from 'react';
-import { FileText, Globe, GitBranch, Users, Shield, AlertTriangle, Brain, ArrowLeft, ArrowRight } from 'lucide-react';
+import { FileText, Globe, GitBranch, Users, Shield, AlertTriangle, Brain, ArrowLeft, ArrowRight, Github, Twitter, Instagram as Telegram, Disc as Discord, Upload, CheckCircle, Link } from 'lucide-react';
 
 interface FormStep {
   title: string;
