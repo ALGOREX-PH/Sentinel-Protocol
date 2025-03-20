@@ -8,6 +8,7 @@ import CommunitySection from './components/CommunitySection';
 import AISection from './components/AISection';
 import ScamAlerts from './components/ScamAlerts';
 import Footer from './components/Footer.tsx';
+import ChatButton from './components/ChatButton';
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
       <AISection />
       <ScamAlerts />
       <Footer />
+      <ChatButton />
     </div>
   );
 }
