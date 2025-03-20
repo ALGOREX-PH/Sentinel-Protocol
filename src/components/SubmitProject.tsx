@@ -1,4 +1,6 @@
 import React from 'react';
+import Navbar from './Navbar';
+import Footer from './Footer';
 import { FormStep } from './submit/types';
 import Header from './submit/Header';
 import ProgressSteps from './submit/ProgressSteps';
@@ -32,12 +34,14 @@ export default function SubmitProject() {
   const [currentStep, setCurrentStep] = React.useState(0);
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-sentinel-dark-900 to-sentinel-dark-800">
-      <Header />
-      <ProgressSteps steps={steps} currentStep={currentStep} />
+    <div className="relative min-h-screen bg-gradient-to-b from-sentinel-dark-900 to-sentinel-dark-800">
+      <Navbar />
+      <div className="pt-20">
+        <Header />
+        <ProgressSteps steps={steps} currentStep={currentStep} />
 
-      {/* Form Content */}
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        {/* Form Content */}
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <div className="bg-sentinel-dark-800/50 rounded-xl p-6 sm:p-8 border border-sentinel-dark-700">
           {currentStep === 0 && <BasicInfo />}
           {currentStep === 1 && <TechnicalInfo />}
@@ -53,6 +57,8 @@ export default function SubmitProject() {
         </div>
 
         <AIFeatures />
+        </div>
+        <Footer />
       </div>
     </div>
   );
