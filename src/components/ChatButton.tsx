@@ -40,7 +40,7 @@ export default function ChatButton() {
       </button>
 
       {isOpen && (
-        <div className="fixed bottom-24 right-6 w-96 h-[600px] bg-sentinel-dark-900/95 backdrop-blur-sm rounded-2xl shadow-2xl flex flex-col border border-sentinel-dark-700 animate-in fade-in slide-in-from-bottom-4">
+        <div className="fixed bottom-24 right-6 w-[95vw] sm:w-96 max-h-[80vh] h-[600px] bg-sentinel-dark-900/95 backdrop-blur-sm rounded-2xl shadow-2xl flex flex-col border border-sentinel-dark-700 animate-in fade-in slide-in-from-bottom-4">
           <div className="p-4 bg-gradient-to-r from-sentinel-dark-900 to-sentinel-dark-800 rounded-t-2xl border-b border-sentinel-dark-700">
             <div className="flex items-center gap-2">
               <Brain className="h-5 w-5 text-sentinel-cyan" />
