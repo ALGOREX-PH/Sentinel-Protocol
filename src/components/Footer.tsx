@@ -45,7 +45,7 @@ export default function Footer() {
         </div>
         <div className="mt-12 pt-8 border-t border-sentinel-dark-800 flex flex-col md:flex-row justify-between items-center gap-4">
           <div className="text-sentinel-white/60 text-sm">
-            © 2024 Sentinel Protocol. All rights reserved.
+            © 2025 Sentinel Protocol. All rights reserved.
           </div>
           <div className="flex items-center gap-6">
             <a href="#" className="text-sentinel-white/60 hover:text-sentinel-cyan transition-colors">
