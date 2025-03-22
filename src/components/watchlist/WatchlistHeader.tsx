@@ -3,7 +3,7 @@ import { Search } from 'lucide-react';
 
 export default function WatchlistHeader() {
   return (
-    <div className="bg-sentinel-dark-800/50 border-b border-sentinel-dark-700 py-16">
+    <div className="bg-sentinel-dark-800/50 border-b border-sentinel-dark-700 py-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-8">
           <h1 className="text-3xl sm:text-4xl font-bold text-sentinel-white mb-4 bg-gradient-to-r from-sentinel-cyan to-sentinel-teal bg-clip-text text-transparent">
