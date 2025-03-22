@@ -29,7 +29,7 @@ export default function Navbar() {
             </span>
           </div>
           <div className="hidden md:flex items-center gap-8 lg:gap-12">
-            <NavLink href="#" text="Features" />
+            <NavLink href="/projects" text="Explore Projects" />
             <NavLink href="#" text="How It Works" />
             <NavLink href="#" text="Statistics" />
             <NavLink href="#" text="News" />
@@ -54,7 +54,7 @@ export default function Navbar() {
         {isMenuOpen && (
           <div className="md:hidden py-6 px-2 border-t border-white/10 animate-in slide-in-from-top duration-300">
             <div className="flex flex-col gap-6">
-              <MobileNavLink href="#" text="Features" />
+              <MobileNavLink href="/projects" text="Explore Projects" />
               <MobileNavLink href="#" text="How It Works" />
               <MobileNavLink href="#" text="Statistics" />
               <MobileNavLink href="#" text="News" />
