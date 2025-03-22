@@ -11,6 +11,7 @@ import ScamAlerts from './components/ScamAlerts';
 import Footer from './components/Footer.tsx';
 import ChatButton from './components/ChatButton';
 import SubmitProject from './components/SubmitProject';
+import ProjectDirectory from './components/projects/ProjectDirectory';
 
 function App() {
   return (
@@ -34,6 +35,7 @@ function App() {
           }
         />
         <Route path="/submit" element={<SubmitProject />} />
+        <Route path="/projects" element={<ProjectDirectory />} />
       </Routes>
     </Router>
   );
