@@ -30,9 +30,9 @@ export default function Navbar() {
           </div>
           <div className="hidden md:flex items-center gap-8 lg:gap-12">
             <NavLink href="/projects" text="Explore Projects" />
+            <NavLink href="/analysis" text="Analysis" />
             <NavLink href="/watchlist" text="Watchlist" />
             <NavLink href="#" text="Statistics" />
-            <NavLink href="#" text="News" />
           </div>
           <div className="hidden md:flex items-center gap-4">
             <button className="text-sentinel-white/60 hover:text-sentinel-white transition-colors px-4 py-2 rounded-lg hover:bg-white/5">
@@ -55,9 +55,9 @@ export default function Navbar() {
           <div className="md:hidden py-6 px-2 border-t border-white/10 animate-in slide-in-from-top duration-300">
             <div className="flex flex-col gap-6">
               <MobileNavLink href="/projects" text="Explore Projects" />
+              <MobileNavLink href="/analysis" text="Analysis" />
               <MobileNavLink href="/watchlist" text="Watchlist" />
               <MobileNavLink href="#" text="Statistics" />
-              <MobileNavLink href="#" text="News" />
               <div className="flex flex-col gap-3 pt-6 border-t border-white/10">
                 <button className="text-sentinel-white/60 hover:text-sentinel-white transition-colors py-3 px-4 rounded-lg hover:bg-white/5">
                   Login
