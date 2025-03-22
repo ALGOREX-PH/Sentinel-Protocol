@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
-import { Search, Filter, Tag, Shield } from 'lucide-react';
 import Navbar from '../Navbar';
 import Footer from '../Footer';
-import ProjectCard from './ProjectCard';
+import DirectoryHeader from './DirectoryHeader';
+import SearchBar from './SearchBar';
+import FilterBar from './FilterBar';
+import ProjectGrid from './ProjectGrid';
 import { Project, RiskLevel } from './types';
 
 const mockProjects: Project[] = [
@@ -57,59 +59,20 @@ export default function ProjectDirectory() {
       {/* Main Content */}
       <div className="pt-20 pb-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          {/* Header */}
-          <div className="text-center mb-12">
-            <h1 className="text-4xl font-bold mb-4 bg-gradient-to-r from-sentinel-cyan to-sentinel-teal bg-clip-text text-transparent">
-              Crypto Project Directory
-            </h1>
-            <p className="text-sentinel-white/60 max-w-3xl mx-auto">
-              Your ultimate crypto intelligence hub powered by AI insights and community-driven security assessments
-            </p>
-          </div>
+          <DirectoryHeader />
 
-          {/* Search Bar */}
-          <div className="relative mb-8">
-            <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 h-5 w-5 text-sentinel-white/40" />
-            <input
-              type="text"
-              placeholder="Search for crypto projects..."
-              value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full pl-12 pr-4 py-4 rounded-xl bg-sentinel-dark-800/50 border border-sentinel-dark-700 text-sentinel-white placeholder-sentinel-white/40 focus:outline-none focus:ring-2 focus:ring-sentinel-cyan/50 transition-all"
-            />
-          </div>
+          <SearchBar
+            value={searchQuery}
+            onChange={setSearchQuery}
+          />
 
-          {/* Filters */}
-          <div className="flex flex-wrap gap-4 mb-8">
-            <div className="relative group">
-              <button className="flex items-center gap-2 px-4 py-2 rounded-lg bg-sentinel-dark-800/50 border border-sentinel-dark-700 text-sentinel-white/80 hover:bg-sentinel-dark-700/50 transition-all">
-                <Filter className="h-4 w-4" />
-                Blockchain Type
-              </button>
-              {/* Dropdown content would go here */}
-            </div>
+          <FilterBar
+            onBlockchainChange={setSelectedBlockchain}
+            onRiskLevelChange={setSelectedRiskLevel}
+            onCategoryChange={setSelectedCategory}
+          />
 
-            <div className="relative group">
-              <button className="flex items-center gap-2 px-4 py-2 rounded-lg bg-sentinel-dark-800/50 border border-sentinel-dark-700 text-sentinel-white/80 hover:bg-sentinel-dark-700/50 transition-all">
-                <Shield className="h-4 w-4" />
-                Risk Score
-              </button>
-            </div>
-
-            <div className="relative group">
-              <button className="flex items-center gap-2 px-4 py-2 rounded-lg bg-sentinel-dark-800/50 border border-sentinel-dark-700 text-sentinel-white/80 hover:bg-sentinel-dark-700/50 transition-all">
-                <Tag className="h-4 w-4" />
-                Category
-              </button>
-            </div>
-          </div>
-
-          {/* Project Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {mockProjects.map((project) => (
-              <ProjectCard key={project.id} project={project} />
-            ))}
-          </div>
+          <ProjectGrid projects={mockProjects} />
         </div>
       </div>
 
