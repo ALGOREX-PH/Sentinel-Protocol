@@ -13,6 +13,7 @@ import ChatButton from './components/ChatButton';
 import SubmitProject from './components/SubmitProject';
 import ProjectDetails from './components/projects/details/ProjectDetails';
 import ProjectDirectory from './components/projects/ProjectDirectory';
+import Watchlist from './components/watchlist/Watchlist';
 
 function App() {
   return (
@@ -38,6 +39,7 @@ function App() {
         <Route path="/submit" element={<SubmitProject />} />
         <Route path="/projects" element={<ProjectDirectory />} />
         <Route path="/projects/:id" element={<ProjectDetails />} />
+        <Route path="/watchlist" element={<Watchlist />} />
       </Routes>
     </Router>
   );
