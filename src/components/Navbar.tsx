@@ -30,7 +30,7 @@ export default function Navbar() {
           </div>
           <div className="hidden md:flex items-center gap-8 lg:gap-12">
             <NavLink href="/projects" text="Explore Projects" />
-            <NavLink href="#" text="How It Works" />
+            <NavLink href="/watchlist" text="Watchlist" />
             <NavLink href="#" text="Statistics" />
             <NavLink href="#" text="News" />
           </div>
@@ -55,7 +55,7 @@ export default function Navbar() {
           <div className="md:hidden py-6 px-2 border-t border-white/10 animate-in slide-in-from-top duration-300">
             <div className="flex flex-col gap-6">
               <MobileNavLink href="/projects" text="Explore Projects" />
-              <MobileNavLink href="#" text="How It Works" />
+              <MobileNavLink href="/watchlist" text="Watchlist" />
               <MobileNavLink href="#" text="Statistics" />
               <MobileNavLink href="#" text="News" />
               <div className="flex flex-col gap-3 pt-6 border-t border-white/10">
