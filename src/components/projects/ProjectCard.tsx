@@ -1,4 +1,5 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import { ArrowRight, ThumbsUp, ThumbsDown } from 'lucide-react';
 import { Project } from './types';
 
@@ -59,6 +60,7 @@ const getSmartContractStatus = (status: string) => {
 export default function ProjectCard({ project }: ProjectCardProps) {
   const riskStyles = getRiskLevelStyles(project.riskLevel);
   const contractStatus = getSmartContractStatus(project.smartContract);
+  const navigate = useNavigate();
 
   return (
     <div className="bg-sentinel-dark-800/50 rounded-xl p-6 border border-sentinel-dark-700 hover:border-sentinel-dark-600 transition-all">
@@ -107,7 +109,10 @@ export default function ProjectCard({ project }: ProjectCardProps) {
             <span>{project.downvotes}</span>
           </button>
         </div>
-        <button className="flex items-center gap-1 text-sentinel-cyan hover:text-sentinel-teal transition-colors">
+        <button
+          onClick={() => navigate(`/projects/${project.id}`)}
+          className="flex items-center gap-1 text-sentinel-cyan hover:text-sentinel-teal transition-colors"
+        >
           View Details
           <ArrowRight className="h-4 w-4" />
         </button>
