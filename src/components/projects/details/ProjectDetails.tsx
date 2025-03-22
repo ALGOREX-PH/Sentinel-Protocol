@@ -40,6 +40,34 @@ const projectsData = {
         },
       },
     },
+    team: [
+      {
+        name: 'Michael Chen',
+        role: 'Lead Developer',
+        avatar: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&q=80&w=100',
+        github: '#',
+        linkedin: '#',
+      },
+      {
+        name: 'Sarah Wilson',
+        role: 'Product Manager',
+        avatar: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=100',
+        twitter: '#',
+        linkedin: '#',
+      },
+    ],
+    wallets: [
+      {
+        type: 'Dev Wallet',
+        address: '0x9876...5432',
+        status: 'active',
+      },
+      {
+        type: 'Treasury',
+        address: '0x5432...7890',
+        status: 'locked',
+      },
+    ],
   },
   '2': {
     project: {
@@ -194,8 +222,8 @@ export default function ProjectDetails() {
               </div>
               
               <div className="space-y-6">
-                <TeamSection members={projectData.team} />
-                <WalletActivity wallets={projectData.wallets} />
+                {projectData.team && <TeamSection members={projectData.team} />}
+                {projectData.wallets && <WalletActivity wallets={projectData.wallets} />}
               </div>
             </div>
           </div>
