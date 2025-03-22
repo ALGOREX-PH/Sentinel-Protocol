@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowRight, AlertTriangle, Clock, XCircle } from 'lucide-react';
+import { ArrowRight, AlertTriangle, Clock, XCircle, Copy, Users } from 'lucide-react';
 
 const entries = [
   {
@@ -43,11 +43,26 @@ export default function WatchlistEntries() {
       <div className="flex items-center justify-between mb-6">
         <h2 className="text-2xl font-bold text-sentinel-white">Latest Watchlist Entries</h2>
         <div className="flex items-center gap-4">
+          <div className="flex items-center gap-2">
+            <span className="text-sentinel-white/60">Sort by:</span>
+            <select className="bg-sentinel-dark-800 text-sentinel-white border border-sentinel-dark-700 rounded-lg px-4 py-2">
+              <option>Most Recent</option>
+              <option>Most Reports</option>
+              <option>Highest Risk</option>
+            </select>
+          </div>
           <select className="bg-sentinel-dark-800 text-sentinel-white border border-sentinel-dark-700 rounded-lg px-4 py-2">
-            <option>All Networks</option>
+            <option value="">All Networks</option>
+            <option value="ethereum">Ethereum</option>
+            <option value="bsc">BSC</option>
+            <option value="polygon">Polygon</option>
+            <option value="solana">Solana</option>
           </select>
           <select className="bg-sentinel-dark-800 text-sentinel-white border border-sentinel-dark-700 rounded-lg px-4 py-2">
-            <option>All Risk Levels</option>
+            <option value="">All Risk Levels</option>
+            <option value="high">High Risk</option>
+            <option value="medium">Under Investigation</option>
+            <option value="blacklisted">Blacklisted</option>
           </select>
         </div>
       </div>
@@ -65,16 +80,27 @@ export default function WatchlistEntries() {
             <div className="space-y-2 mb-4">
               <div className="flex items-center gap-2">
                 <code className="text-sm text-sentinel-white/60">{entry.contract}</code>
+                <button className="p-1 hover:bg-sentinel-dark-700/50 rounded transition-colors" title="Copy Address">
+                  <Copy className="h-4 w-4 text-sentinel-white/40" />
+                </button>
               </div>
               <div className="text-sm text-sentinel-white/60">{entry.status}</div>
+              <div className="flex items-center gap-2 text-sm">
+                <span className="px-2 py-0.5 rounded-full bg-sentinel-dark-700 text-sentinel-white/60">
+                  Last Activity: 2h ago
+                </span>
+              </div>
             </div>
 
             <div className="flex items-center justify-between text-sm">
-              <span className="text-sentinel-white/40">{entry.reports} reports</span>
+              <div className="flex items-center gap-2">
+                <Users className="h-4 w-4 text-sentinel-white/40" />
+                <span className="text-sentinel-white/40">{entry.reports} reports</span>
+              </div>
               <span className="text-sentinel-white/40">{entry.timeAgo}</span>
             </div>
 
-            <button className="w-full mt-4 px-4 py-2 bg-sentinel-dark-700 hover:bg-sentinel-dark-600 text-sentinel-white rounded-lg transition-colors flex items-center justify-center gap-2">
+            <button className="w-full mt-4 px-4 py-2 bg-gradient-to-r from-sentinel-cyan to-sentinel-teal hover:opacity-90 text-white rounded-lg transition-all flex items-center justify-center gap-2">
               View Details
               <ArrowRight className="h-4 w-4" />
             </button>
@@ -83,7 +109,7 @@ export default function WatchlistEntries() {
       </div>
 
       <div className="text-center mt-8">
-        <button className="px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-colors">
+        <button className="px-6 py-3 bg-sentinel-dark-700 hover:bg-sentinel-dark-600 text-sentinel-white rounded-lg transition-colors">
           View All Entries
         </button>
       </div>
