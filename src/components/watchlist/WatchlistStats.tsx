@@ -28,11 +28,11 @@ export default function WatchlistStats() {
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-8">
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
         {stats.map((stat) => (
-          <div key={stat.label} className="bg-white rounded-xl p-6 shadow-lg">
+          <div key={stat.label} className="bg-sentinel-dark-800/50 border border-sentinel-dark-700 rounded-xl p-6">
             <div className={`text-2xl sm:text-3xl font-bold ${stat.color} mb-2`}>
               {stat.value}
             </div>
-            <div className="text-gray-600">{stat.label}</div>
+            <div className="text-sentinel-white/60">{stat.label}</div>
           </div>
         ))}
       </div>
