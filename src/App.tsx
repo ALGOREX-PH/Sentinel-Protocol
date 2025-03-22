@@ -11,6 +11,7 @@ import ScamAlerts from './components/ScamAlerts';
 import Footer from './components/Footer.tsx';
 import ChatButton from './components/ChatButton';
 import SubmitProject from './components/SubmitProject';
+import ProjectDetails from './components/projects/details/ProjectDetails';
 import ProjectDirectory from './components/projects/ProjectDirectory';
 
 function App() {
@@ -36,6 +37,7 @@ function App() {
         />
         <Route path="/submit" element={<SubmitProject />} />
         <Route path="/projects" element={<ProjectDirectory />} />
+        <Route path="/projects/:id" element={<ProjectDetails />} />
       </Routes>
     </Router>
   );
