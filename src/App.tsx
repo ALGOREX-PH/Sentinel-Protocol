@@ -11,6 +11,7 @@ import ScamAlerts from './components/ScamAlerts';
 import Footer from './components/Footer.tsx';
 import ChatButton from './components/ChatButton';
 import SubmitProject from './components/SubmitProject';
+import Analysis from './components/analysis/Analysis';
 import ProjectDetails from './components/projects/details/ProjectDetails';
 import ProjectDirectory from './components/projects/ProjectDirectory';
 import Watchlist from './components/watchlist/Watchlist';
@@ -39,6 +40,7 @@ function App() {
         <Route path="/submit" element={<SubmitProject />} />
         <Route path="/projects" element={<ProjectDirectory />} />
         <Route path="/projects/:id" element={<ProjectDetails />} />
+        <Route path="/analysis" element={<Analysis />} />
         <Route path="/watchlist" element={<Watchlist />} />
       </Routes>
     </Router>
