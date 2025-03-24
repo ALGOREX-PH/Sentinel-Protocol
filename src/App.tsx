@@ -18,6 +18,7 @@ import ProjectDirectory from './components/projects/ProjectDirectory';
 import Watchlist from './components/watchlist/Watchlist';
 import News from './components/news/News';
 import Membership from './components/membership/Membership';
+import Login from './components/auth/Login';
 
 function App() {
   return (
@@ -50,6 +51,7 @@ function App() {
         <Route path="/news" element={<><News /><ChatButton /></>} />
         <Route path="/watchlist" element={<><Watchlist /><ChatButton /></>} />
         <Route path="/membership" element={<><Membership /><ChatButton /></>} />
+        <Route path="/login" element={<><Login /><ChatButton /></>} />
       </Routes>
     </Router>
   );
