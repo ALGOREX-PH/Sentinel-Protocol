@@ -36,9 +36,12 @@ export default function Navbar() {
             <NavLink href="/news" text="News" />
           </div>
           <div className="hidden md:flex items-center gap-4">
-            <button className="text-sentinel-white/60 hover:text-sentinel-white transition-colors px-4 py-2 rounded-lg hover:bg-white/5">
+            <a
+              href="/login"
+              className="text-sentinel-white/60 hover:text-sentinel-white transition-colors px-4 py-2 rounded-lg hover:bg-white/5"
+            >
               Login
-            </button>
+            </a>
             <a
               href="/membership"
               className="bg-gradient-to-r from-sentinel-cyan to-sentinel-teal hover:opacity-90 px-6 py-2.5 rounded-lg text-sentinel-white font-medium transition-all hover:shadow-lg hover:shadow-sentinel-cyan/20 hover:scale-105"
@@ -64,9 +67,12 @@ export default function Navbar() {
               <MobileNavLink href="/watchlist" text="Watchlist" />
               <MobileNavLink href="/news" text="News" />
               <div className="flex flex-col gap-3 pt-6 border-t border-white/10">
-                <button className="text-sentinel-white/60 hover:text-sentinel-white transition-colors py-3 px-4 rounded-lg hover:bg-white/5">
+                <a
+                  href="/login"
+                  className="text-sentinel-white/60 hover:text-sentinel-white transition-colors py-3 px-4 rounded-lg hover:bg-white/5 text-center"
+                >
                   Login
-                </button>
+                </a>
                 <a
                   href="/membership"
                   className="bg-gradient-to-r from-sentinel-cyan to-sentinel-teal hover:opacity-90 px-6 py-3 rounded-lg text-sentinel-white font-medium transition-all text-center"
