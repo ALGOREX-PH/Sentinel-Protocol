@@ -15,9 +15,12 @@ export default function MembershipHeader() {
           In a decentralized world filled with opportunity, security should be your first move—not your last resort.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <button className="px-8 py-4 bg-gradient-to-r from-sentinel-cyan to-sentinel-teal text-white rounded-lg font-medium hover:opacity-90 transition-all">
+          <a
+            href="/dashboard"
+            className="px-8 py-4 bg-gradient-to-r from-sentinel-cyan to-sentinel-teal text-white rounded-lg font-medium hover:opacity-90 transition-all text-center"
+          >
             Create Account Now
-          </button>
+          </a>
           <button className="px-8 py-4 bg-sentinel-dark-800/50 text-sentinel-white rounded-lg font-medium hover:bg-sentinel-dark-700/50 transition-all">
             Connect Wallet
           </button>
