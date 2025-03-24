@@ -19,6 +19,7 @@ import Watchlist from './components/watchlist/Watchlist';
 import News from './components/news/News';
 import Membership from './components/membership/Membership';
 import Login from './components/auth/Login';
+import ApiExtension from './components/api/ApiExtension';
 
 function App() {
   return (
@@ -52,6 +53,7 @@ function App() {
         <Route path="/watchlist" element={<><Watchlist /><ChatButton /></>} />
         <Route path="/membership" element={<><Membership /><ChatButton /></>} />
         <Route path="/login" element={<><Login /><ChatButton /></>} />
+        <Route path="/api" element={<><ApiExtension /><ChatButton /></>} />
       </Routes>
     </Router>
   );
