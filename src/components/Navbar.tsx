@@ -33,7 +33,7 @@ export default function Navbar() {
             <NavLink href="/analysis" text="Analysis" />
             <NavLink href="/community" text="Community Voting" />
             <NavLink href="/watchlist" text="Watchlist" />
-            <NavLink href="#" text="Statistics" />
+            <NavLink href="/news" text="News" />
           </div>
           <div className="hidden md:flex items-center gap-4">
             <button className="text-sentinel-white/60 hover:text-sentinel-white transition-colors px-4 py-2 rounded-lg hover:bg-white/5">
@@ -59,7 +59,7 @@ export default function Navbar() {
               <MobileNavLink href="/analysis" text="Analysis" />
               <MobileNavLink href="/community" text="Community Voting" />
               <MobileNavLink href="/watchlist" text="Watchlist" />
-              <MobileNavLink href="#" text="Statistics" />
+              <MobileNavLink href="/news" text="News" />
               <div className="flex flex-col gap-3 pt-6 border-t border-white/10">
                 <button className="text-sentinel-white/60 hover:text-sentinel-white transition-colors py-3 px-4 rounded-lg hover:bg-white/5">
                   Login

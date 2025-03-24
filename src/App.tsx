@@ -25,7 +25,8 @@ function App() {
         <Route
           path="/"
           element={
-            <div className="min-h-screen bg-gradient-to-b from-sentinel-dark-900 to-sentinel-dark-800 text-sentinel-white">
+            <>
+              <div className="min-h-screen bg-gradient-to-b from-sentinel-dark-900 to-sentinel-dark-800 text-sentinel-white">
               <Navbar />
               <Hero />
               <ProblemSolution />
@@ -35,17 +36,18 @@ function App() {
               <AISection />
               <ScamAlerts />
               <Footer />
+              </div>
               <ChatButton />
-            </div>
+            </>
           }
         />
-        <Route path="/submit" element={<SubmitProject />} />
-        <Route path="/projects" element={<ProjectDirectory />} />
-        <Route path="/projects/:id" element={<ProjectDetails />} />
-        <Route path="/community" element={<Community />} />
-        <Route path="/analysis" element={<Analysis />} />
-        <Route path="/news" element={<News />} />
-        <Route path="/watchlist" element={<Watchlist />} />
+        <Route path="/submit" element={<><SubmitProject /><ChatButton /></>} />
+        <Route path="/projects" element={<><ProjectDirectory /><ChatButton /></>} />
+        <Route path="/projects/:id" element={<><ProjectDetails /><ChatButton /></>} />
+        <Route path="/community" element={<><Community /><ChatButton /></>} />
+        <Route path="/analysis" element={<><Analysis /><ChatButton /></>} />
+        <Route path="/news" element={<><News /><ChatButton /></>} />
+        <Route path="/watchlist" element={<><Watchlist /><ChatButton /></>} />
       </Routes>
     </Router>
   );
