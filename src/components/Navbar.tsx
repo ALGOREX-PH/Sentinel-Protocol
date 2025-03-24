@@ -34,6 +34,7 @@ export default function Navbar() {
             <NavLink href="/community" text="Community Voting" />
             <NavLink href="/watchlist" text="Watchlist" />
             <NavLink href="/news" text="News" />
+            <NavLink href="/api" text="API & Extension" />
           </div>
           <div className="hidden md:flex items-center gap-4">
             <a
@@ -66,6 +67,7 @@ export default function Navbar() {
               <MobileNavLink href="/community" text="Community Voting" />
               <MobileNavLink href="/watchlist" text="Watchlist" />
               <MobileNavLink href="/news" text="News" />
+              <MobileNavLink href="/api" text="API & Extension" />
               <div className="flex flex-col gap-3 pt-6 border-t border-white/10">
                 <a
                   href="/login"
