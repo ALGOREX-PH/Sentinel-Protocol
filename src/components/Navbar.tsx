@@ -39,9 +39,12 @@ export default function Navbar() {
             <button className="text-sentinel-white/60 hover:text-sentinel-white transition-colors px-4 py-2 rounded-lg hover:bg-white/5">
               Login
             </button>
-            <button className="bg-gradient-to-r from-sentinel-cyan to-sentinel-teal hover:opacity-90 px-6 py-2.5 rounded-lg text-sentinel-white font-medium transition-all hover:shadow-lg hover:shadow-sentinel-cyan/20 hover:scale-105">
+            <a
+              href="/membership"
+              className="bg-gradient-to-r from-sentinel-cyan to-sentinel-teal hover:opacity-90 px-6 py-2.5 rounded-lg text-sentinel-white font-medium transition-all hover:shadow-lg hover:shadow-sentinel-cyan/20 hover:scale-105"
+            >
               Get Started
-            </button>
+            </a>
           </div>
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -64,9 +67,12 @@ export default function Navbar() {
                 <button className="text-sentinel-white/60 hover:text-sentinel-white transition-colors py-3 px-4 rounded-lg hover:bg-white/5">
                   Login
                 </button>
-                <button className="bg-gradient-to-r from-sentinel-cyan to-sentinel-teal hover:opacity-90 px-6 py-3 rounded-lg text-sentinel-white font-medium transition-all">
+                <a
+                  href="/membership"
+                  className="bg-gradient-to-r from-sentinel-cyan to-sentinel-teal hover:opacity-90 px-6 py-3 rounded-lg text-sentinel-white font-medium transition-all text-center"
+                >
                   Get Started
-                </button>
+                </a>
               </div>
             </div>
           </div>
