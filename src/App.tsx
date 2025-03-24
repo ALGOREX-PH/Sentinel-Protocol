@@ -16,6 +16,7 @@ import Analysis from './components/analysis/Analysis';
 import ProjectDetails from './components/projects/details/ProjectDetails';
 import ProjectDirectory from './components/projects/ProjectDirectory';
 import Watchlist from './components/watchlist/Watchlist';
+import News from './components/news/News';
 
 function App() {
   return (
@@ -43,6 +44,7 @@ function App() {
         <Route path="/projects/:id" element={<ProjectDetails />} />
         <Route path="/community" element={<Community />} />
         <Route path="/analysis" element={<Analysis />} />
+        <Route path="/news" element={<News />} />
         <Route path="/watchlist" element={<Watchlist />} />
       </Routes>
     </Router>
