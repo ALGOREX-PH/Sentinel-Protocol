@@ -20,6 +20,7 @@ import News from './components/news/News';
 import Membership from './components/membership/Membership';
 import Login from './components/auth/Login';
 import Dashboard from './components/dashboard/Dashboard';
+import Security from './components/security/Security';
 import ApiExtension from './components/api/ApiExtension';
 
 function App() {
@@ -56,6 +57,7 @@ function App() {
         <Route path="/login" element={<><Login /><ChatButton /></>} />
         <Route path="/api" element={<><ApiExtension /><ChatButton /></>} />
         <Route path="/dashboard" element={<><Dashboard /><ChatButton /></>} />
+        <Route path="/security" element={<><Security /><ChatButton /></>} />
       </Routes>
     </Router>
   );
