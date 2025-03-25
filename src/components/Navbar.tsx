@@ -1,10 +1,41 @@
 import React from 'react';
-import { Shield, ChevronDown } from 'lucide-react';
+import { Shield, ChevronDown, Activity, Lock, Users, Bell, Code, FileText, Wallet, Brain } from 'lucide-react';
+
+const navItems = [
+  {
+    text: 'Products',
+    items: [
+      { href: '/projects', text: 'Explore Projects', icon: Activity },
+      { href: '/analysis', text: 'Analysis', icon: Brain },
+      { href: '/security', text: 'Security & Compliance', icon: Lock },
+    ]
+  },
+  {
+    text: 'Community',
+    items: [
+      { href: '/community', text: 'Community Voting', icon: Users },
+      { href: '/watchlist', text: 'Watchlist', icon: Bell },
+      { href: '/news', text: 'News', icon: FileText },
+    ]
+  },
+  {
+    text: 'Tools',
+    items: [
+      { href: '/api', text: 'API & Extension', icon: Code },
+      { href: '/dashboard', text: 'Dashboard', icon: Activity },
+      { href: '/wallet', text: 'Wallet Scanner', icon: Wallet },
+    ]
+  }
+];
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
   const [isScrolled, setIsScrolled] = React.useState(false);
   const [activeDropdown, setActiveDropdown] = React.useState<string | null>(null);
+
+  const handleDropdownToggle = (dropdown: string) => {
+    setActiveDropdown(activeDropdown === dropdown ? null : dropdown);
+  };
 
   React.useEffect(() => {
     const handleScroll = () => {
@@ -30,13 +61,33 @@ export default function Navbar() {
             </span>
           </a>
           <div className="hidden md:flex items-center gap-8 lg:gap-12">
-            <NavLink href="/projects" text="Explore Projects" />
-            <NavLink href="/analysis" text="Analysis" />
-            <NavLink href="/security" text="Security & Compliance" />
-            <NavLink href="/community" text="Community Voting" />
-            <NavLink href="/watchlist" text="Watchlist" />
-            <NavLink href="/news" text="News" />
-            <NavLink href="/api" text="API & Extension" />
+            {navItems.map((item) => (
+              <div key={item.text} className="relative group">
+                <button
+                  onClick={() => handleDropdownToggle(item.text)}
+                  className="flex items-center gap-2 text-sentinel-white/70 hover:text-sentinel-white transition-all"
+                >
+                  {item.text}
+                  <ChevronDown className={`h-4 w-4 transition-transform ${
+                    activeDropdown === item.text ? 'rotate-180' : ''
+                  }`} />
+                </button>
+                {activeDropdown === item.text && (
+                  <div className="absolute top-full left-0 mt-2 w-64 bg-sentinel-dark-800 rounded-xl border border-sentinel-dark-700 shadow-lg backdrop-blur-lg py-2 animate-in fade-in slide-in-from-top-2">
+                    {item.items.map((subItem) => (
+                      <a
+                        key={subItem.text}
+                        href={subItem.href}
+                        className="flex items-center gap-3 px-4 py-3 hover:bg-sentinel-dark-700/50 text-sentinel-white/70 hover:text-sentinel-white transition-all"
+                      >
+                        <subItem.icon className="h-5 w-5" />
+                        {subItem.text}
+                      </a>
+                    ))}
+                  </div>
+                )}
+              </div>
+            ))}
           </div>
           <div className="hidden md:flex items-center gap-4">
             <a
@@ -64,13 +115,23 @@ export default function Navbar() {
         {isMenuOpen && (
           <div className="md:hidden py-6 px-2 border-t border-sentinel-dark-700 animate-in slide-in-from-top duration-300 backdrop-blur-lg">
             <div className="flex flex-col gap-6">
-              <MobileNavLink href="/projects" text="Explore Projects" />
-              <MobileNavLink href="/analysis" text="Analysis" />
-             <MobileNavLink href="/security" text="Security & Compliance" />
-              <MobileNavLink href="/community" text="Community Voting" />
-              <MobileNavLink href="/watchlist" text="Watchlist" />
-              <MobileNavLink href="/news" text="News" />
-              <MobileNavLink href="/api" text="API & Extension" />
+              {navItems.map((item) => (
+                <div key={item.text} className="space-y-2">
+                  <div className="px-4 text-sm font-medium text-sentinel-white/40">
+                    {item.text}
+                  </div>
+                  {item.items.map((subItem) => (
+                    <a
+                      key={subItem.text}
+                      href={subItem.href}
+                      className="flex items-center gap-3 px-4 py-3 rounded-lg bg-sentinel-dark-800/50 hover:bg-sentinel-dark-700/50 text-sentinel-white/70 hover:text-sentinel-white transition-all border border-sentinel-dark-700"
+                    >
+                      <subItem.icon className="h-5 w-5" />
+                      {subItem.text}
+                    </a>
+                  ))}
+                </div>
+              ))}
               <div className="flex flex-col gap-3 pt-6 border-t border-white/10">
                 <a
                   href="/login"
@@ -90,31 +151,5 @@ export default function Navbar() {
         )}
       </div>
     </nav>
-  );
-}
-
-function NavLink({ href, text }: { href: string; text: string }) {
-  return (
-    <a
-      href={href}
-      className="relative group flex items-center gap-1"
-    >
-      <span className="text-sentinel-white/70 group-hover:text-sentinel-white transition-all">
-        {text}
-      </span>
-      <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-sentinel-cyan via-blue-500 to-sentinel-teal group-hover:w-full transition-all duration-300" />
-    </a>
-  );
-}
-
-function MobileNavLink({ href, text }: { href: string; text: string }) {
-  return (
-    <a
-      href={href}
-      className="flex items-center justify-between py-3 px-4 rounded-lg bg-sentinel-dark-800/50 hover:bg-sentinel-dark-700/50 text-sentinel-white/70 hover:text-sentinel-white transition-all border border-sentinel-dark-700 hover:border-sentinel-dark-600"
-    >
-      <span>{text}</span>
-      <ChevronDown className="h-4 w-4 opacity-50 transition-transform group-hover:rotate-180" />
-    </a>
   );
 }
