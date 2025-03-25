@@ -24,6 +24,7 @@ import Security from './components/security/Security';
 import ApiExtension from './components/api/ApiExtension';
 import BugBounty from './components/bugbounty/BugBounty';
 import About from './components/about/About';
+import Roadmap from './components/roadmap/Roadmap';
 
 function App() {
   return (
@@ -62,6 +63,7 @@ function App() {
         <Route path="/security" element={<><Security /><ChatButton /></>} />
         <Route path="/bugbounty" element={<><BugBounty /><ChatButton /></>} />
         <Route path="/about" element={<><About /><ChatButton /></>} />
+        <Route path="/roadmap" element={<><Roadmap /><ChatButton /></>} />
       </Routes>
     </Router>
   );
