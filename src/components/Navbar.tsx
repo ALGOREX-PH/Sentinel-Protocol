@@ -31,6 +31,7 @@ export default function Navbar() {
           <div className="hidden md:flex items-center gap-8 lg:gap-12">
             <NavLink href="/projects" text="Explore Projects" />
             <NavLink href="/analysis" text="Analysis" />
+            <NavLink href="/security" text="Security & Compliance" />
             <NavLink href="/community" text="Community Voting" />
             <NavLink href="/watchlist" text="Watchlist" />
             <NavLink href="/news" text="News" />
@@ -64,6 +65,7 @@ export default function Navbar() {
             <div className="flex flex-col gap-6">
               <MobileNavLink href="/projects" text="Explore Projects" />
               <MobileNavLink href="/analysis" text="Analysis" />
+             <MobileNavLink href="/security" text="Security & Compliance" />
               <MobileNavLink href="/community" text="Community Voting" />
               <MobileNavLink href="/watchlist" text="Watchlist" />
               <MobileNavLink href="/news" text="News" />
