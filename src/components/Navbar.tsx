@@ -18,6 +18,7 @@ const navItems = [
       { href: '/watchlist', text: 'Watchlist', icon: Bell },
       { href: '/news', text: 'News', icon: FileText },
       { href: '/about', text: 'About Us', icon: Users },
+      { href: '/roadmap', text: 'Roadmap', icon: FileText },
     ]
   },
   {
