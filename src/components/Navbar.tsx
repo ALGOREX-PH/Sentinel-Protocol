@@ -17,6 +17,7 @@ const navItems = [
       { href: '/community', text: 'Community Voting', icon: Users },
       { href: '/watchlist', text: 'Watchlist', icon: Bell },
       { href: '/news', text: 'News', icon: FileText },
+      { href: '/about', text: 'About Us', icon: Users },
     ]
   },
   {
