@@ -1,5 +1,5 @@
 import React from 'react';
-import { Shield, ChevronDown, Activity, Lock, Users, Bell, Code, FileText, Wallet, Brain } from 'lucide-react';
+import { Shield, ChevronDown, Activity, Lock, Users, Bell, Code, FileText, Wallet, Brain, Bug } from 'lucide-react';
 
 const navItems = [
   {
@@ -8,6 +8,7 @@ const navItems = [
       { href: '/projects', text: 'Explore Projects', icon: Activity },
       { href: '/analysis', text: 'Analysis', icon: Brain },
       { href: '/security', text: 'Security & Compliance', icon: Lock },
+      { href: '/bugbounty', text: 'Bug Bounty', icon: Bug },
     ]
   },
   {
