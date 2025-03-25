@@ -23,6 +23,7 @@ import Dashboard from './components/dashboard/Dashboard';
 import Security from './components/security/Security';
 import ApiExtension from './components/api/ApiExtension';
 import BugBounty from './components/bugbounty/BugBounty';
+import About from './components/about/About';
 
 function App() {
   return (
@@ -60,6 +61,7 @@ function App() {
         <Route path="/dashboard" element={<><Dashboard /><ChatButton /></>} />
         <Route path="/security" element={<><Security /><ChatButton /></>} />
         <Route path="/bugbounty" element={<><BugBounty /><ChatButton /></>} />
+        <Route path="/about" element={<><About /><ChatButton /></>} />
       </Routes>
     </Router>
   );
